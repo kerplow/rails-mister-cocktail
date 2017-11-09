@@ -1,0 +1,5 @@
+<h1><%= @cocktail.name %></h1>
+<p>Add an ingredient to spice up your cocktail:</p>
+<%= render 'form' %>
+<%= link_to 'back to cocktail', cocktail_path(@cocktail), {class: 'btn btn-primary'} %>
+<%= link_to 'home', cocktails_path, {class: 'btn btn-info' } %>
