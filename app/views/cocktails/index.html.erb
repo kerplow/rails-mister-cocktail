@@ -1,8 +1,12 @@
 <h1>Welcome to Mr. Cocktail</h1>
 <p>Find and make your favorite cocktails!</p>
+<h3>Current cocktails:</h3>
+<% if @cocktails.empty? %>
+<p><%= 'no cocktails known yet' %></p>
+<% end %>
 <ul>
 <% @cocktails.each do |cocktail| %>
-<li><h2><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h2></li>
+<li><h4><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h4></li>
 <% end %>
 </ul>
 <%= link_to 'add a cocktail', new_cocktail_path, { class: 'btn btn-success'} %>

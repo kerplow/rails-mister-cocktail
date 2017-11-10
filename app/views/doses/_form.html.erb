@@ -1,5 +1,5 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient, collection: @ingredients %>
-  <%= f.button :submit, { class: 'btn btn-primary' } %>
+<%= simple_form_for [@cocktail, @dose], html: { class: "form-inline", style: 'display: inline'} do |f| %>
+  <%= f.input :description, label: false, :placeholder => 'ex:2cl' %> of
+  <%= f.association :ingredient, collection: @ingredients, label: false, selected: 1 %>
+  <%= f.button :submit, 'add ingredient', { class: 'btn btn-primary' } %>
 <% end %>

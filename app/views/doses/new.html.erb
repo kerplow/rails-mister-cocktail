@@ -1,5 +1,13 @@
 <h1><%= @cocktail.name %></h1>
+<% if @cocktail.doses.empty? %>
+  <p>no ingredients yet, this is gonna be a dry cocktail...</p>
+<% end %>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+  <% end %>
+</ul>
 <p>Add an ingredient to spice up your cocktail:</p>
 <%= render 'form' %>
-<%= link_to 'back to cocktail', cocktail_path(@cocktail), {class: 'btn btn-primary'} %>
-<%= link_to 'home', cocktails_path, {class: 'btn btn-info' } %>
+<%= link_to 'back to cocktail', cocktail_path(@cocktail), {class: 'btn btn-info'} %>
+
