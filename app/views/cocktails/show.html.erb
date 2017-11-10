@@ -17,3 +17,9 @@
 </ul>
 <p>Add an ingredient to spice up your cocktail:</p>
 <%= render 'doses/form' %>
+<ul>
+<% @cocktail.reviews.each do |review| %>
+<li><%= review.rating %> stars: <%= review.content %></li>
+<% end %>
+</ul>
+<%= link_to 'add review', new_cocktail_review_path(@cocktail), {class: 'btn btn-success'} %>
