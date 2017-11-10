@@ -4,7 +4,7 @@
 <% if @cocktails.empty? %>
 <p><%= 'no cocktails known yet' %></p>
 <% end %>
-<ul>
+<ul style='list-style-type: none'>
 <% @cocktails.each do |cocktail| %>
 <li><h4><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h4></li>
 <% end %>

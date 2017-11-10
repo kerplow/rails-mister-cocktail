@@ -1,10 +1,13 @@
 <h1><%= @cocktail.name %></h1>
+<p>What will you need for this refreshing cocktail: </p>
 <% if @cocktail.doses.empty? %>
   <p>no ingredients yet, this is gonna be a dry cocktail...</p>
 <% end %>
 <ul>
   <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+    <li>
+      <%= dose.description %> of <%= dose.ingredient.name %><%= link_to 'remove ingredient', dose_path(dose), { method: :delete, class: 'btn btn-danger' } %>
+    </li>
   <% end %>
 </ul>
 <p>Add an ingredient to spice up your cocktail:</p>

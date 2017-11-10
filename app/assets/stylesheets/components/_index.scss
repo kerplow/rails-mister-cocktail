@@ -1,3 +1,8 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+@import "sidebar";
+
+ul {
+  padding-left: 0;
+}
