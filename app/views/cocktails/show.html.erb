@@ -1,5 +1,9 @@
 <h1><%= @cocktail.name %></h1>
-<p>What will you need for this refreshing cocktail: </p>
+<p>What will you need for this refreshing cocktail:
+  <% if @cocktail.photo %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <% end %>
+</p>
 <% if @cocktail.doses.empty? %>
   <p>no ingredients yet, this is gonna be a dry cocktail...</p>
 <% end %>
